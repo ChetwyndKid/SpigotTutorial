@@ -23,7 +23,7 @@ public class PlayerInteraction implements Listener {
           playerDetect.setHealth(playerDetect.getHealth() + 1); //Checks player health and sets health to +1 from that.
         }
         else {
-          playerDetect.sendMessage(ChatColor.DARK_RED + "You already have full health?|");
+          playerDetect.sendMessage(ChatColor.DARK_RED + "You already have full health?");
         }
       }
       else { //Obvious shit
