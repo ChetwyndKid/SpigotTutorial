@@ -17,17 +17,19 @@ public class Commands implements Listener, CommandExecutor {
     if(sender instanceof Player){
       if(cmd.getName().equalsIgnoreCase(gcmd));{ //Checks if the command is the command we are looking for
         if (args.length != 0) {
-          Material item = Material.getMaterial(args[0]); //Checks if the argument after the command is actually an item
+          Material item = Material.getMaterial(args[0].toUpperCase()); //Checks if the argument after the command is actually an item and capitalises it
           if (item != null) { //If the result is not null, Proceed to add item.
             Inventory inv = ((Player) sender).getInventory(); //Detects player inventory
             inv.addItem(new ItemStack(item, 1)); //Puts item in inventory and declares how many.
             return true;
           } else {
-            sender.sendMessage(ChatColor.RED + args[0] + ChatColor.GOLD + "This is not a valid item"); //Otherwise tell the user its not a vaild item.
+            sender.sendMessage(ChatColor.RED + args[0] + ChatColor.GOLD + " is not a valid item"); //Otherwise tell the user its not a vaild item.
+            return true;
           }
         }
         else {
           sender.sendMessage(ChatColor.RED + "Please specify item");
+          return true;
         }
       }
     }
@@ -35,6 +37,5 @@ public class Commands implements Listener, CommandExecutor {
         sender.sendMessage(ChatColor.RED + "This is a player only command"); //Tells console that it needs to be ran via a player.
         return true;
       }
-    return false;
   }
 }
