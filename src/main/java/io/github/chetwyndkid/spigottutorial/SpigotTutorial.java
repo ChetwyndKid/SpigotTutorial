@@ -1,9 +1,6 @@
 package io.github.chetwyndkid.spigottutorial;
 
-import io.github.chetwyndkid.spigottutorial.Events.BlockPlaceBreak;
-import io.github.chetwyndkid.spigottutorial.Events.EventsClass;
-import io.github.chetwyndkid.spigottutorial.Events.PlayerInteraction;
-import io.github.chetwyndkid.spigottutorial.Events.PlayerMovement;
+import io.github.chetwyndkid.spigottutorial.Events.*;
 import io.github.chetwyndkid.spigottutorial.Items.CustomItems;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,11 +13,12 @@ public final class SpigotTutorial extends JavaPlugin {
    // getServer().getPluginManager().registerEvents(new PlayerMovement(), this); // Loads Player Movement part of the plugin
     getServer().getPluginManager().registerEvents(new PlayerInteraction(), this); // Loads Player Interaction part of the plugin
    // getServer().getPluginManager().registerEvents(new BlockPlaceBreak(), this); // Loads Player BlockPlaceBreak part of the plugin
-    getServer().getPluginManager().registerEvents(new EventsClass(), this); //Loads EventsClass part of the plugin
+    getServer().getPluginManager().registerEvents(new StartingStuff(), this); //Loads EventsClass part of the plugin
     loadConfig();
 
     CustomItems items = new CustomItems();
     items.customAxe();
+    items.scAxe();
   }
 
   @Override
