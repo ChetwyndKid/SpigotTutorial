@@ -20,7 +20,7 @@ public final class SpigotTutorial extends JavaPlugin {
     loadConfig();
 
     CustomItems items = new CustomItems();
-    items.customRecipes();
+    items.customAxe();
   }
 
   @Override

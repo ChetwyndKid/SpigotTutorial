@@ -29,13 +29,13 @@ public class CustomItems implements Listener {
 
     player.getInventory().addItem(item); //Gives the item
   }
-  public void customRecipes(){ //Doesnt Work? 
-    ShapedRecipe CustomAxe = new ShapedRecipe(item);
-    CustomAxe.setIngredient('#', Material.DIAMOND);
-    CustomAxe.setIngredient('%', Material.IRON_BARS);
-    CustomAxe.setIngredient('$', Material.STICK);
-    CustomAxe.shape("#% ","#% "," $ ");
+  public void customAxe(){
+    ShapedRecipe customAxe = new ShapedRecipe(item);
+    customAxe.shape("DI ","DI "," S ");
+    customAxe.setIngredient('D', Material.DIAMOND);
+    customAxe.setIngredient('I', Material.IRON_INGOT);
+    customAxe.setIngredient('S', Material.STICK);
 
-    plugin.getServer().addRecipe(CustomAxe);
+    plugin.getServer().addRecipe(customAxe);
   }
 }
