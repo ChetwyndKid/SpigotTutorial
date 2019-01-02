@@ -15,6 +15,7 @@ public final class SpigotTutorial extends JavaPlugin {
     getServer().getPluginManager().registerEvents(new PlayerInteraction(), this); // Loads Player Interaction part of the plugin
    // getServer().getPluginManager().registerEvents(new BlockPlaceBreak(), this); // Loads Player BlockPlaceBreak part of the plugin
     getServer().getPluginManager().registerEvents(new StartingStuff(), this); //Loads EventsClass part of the plugin
+    getServer().getPluginManager().registerEvents(new CraftingRewards(), this); //Loads Crafting Rewards
     loadConfig();
 
     CustomItems items = new CustomItems();
