@@ -14,11 +14,11 @@ import org.bukkit.plugin.Plugin;
 import java.util.ArrayList;
 
 public class CustomItems implements Listener {
-  public ItemStack item = new ItemStack(Material.DIAMOND_AXE);
-  private ItemMeta meta = item.getItemMeta();
-
   private Plugin plugin = SpigotTutorial.getPlugin(SpigotTutorial.class);
-  public void giveItems(Player player){
+
+  public void customAxe(){
+    ItemStack item = new ItemStack(Material.DIAMOND_AXE);
+    ItemMeta meta = item.getItemMeta();
 
     meta.setDisplayName(ChatColor.AQUA + "Its a fucking axe."); //Sets item name
     ArrayList<String> lore = new ArrayList<String>();
@@ -27,9 +27,6 @@ public class CustomItems implements Listener {
     meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
     item.setItemMeta(meta); //Actually set the name.
 
-    player.getInventory().addItem(item); //Gives the item
-  }
-  public void customAxe(){
     ShapedRecipe customAxe = new ShapedRecipe(item);
     customAxe.shape("DI ","DI "," S ");
     customAxe.setIngredient('D', Material.DIAMOND);
