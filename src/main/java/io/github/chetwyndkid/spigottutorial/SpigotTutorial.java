@@ -7,8 +7,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SpigotTutorial extends JavaPlugin {
 
-  @Override
+  private Commands commands = new Commands();
   public void onEnable() { // What happens on plugin startup
+    getCommand(commands.gcmd).setExecutor(commands);
     getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "\n\nSpigot Tutorial plugin has been enabled.\n\n"); // Sends message to console on plugin enable
    // getServer().getPluginManager().registerEvents(new PlayerMovement(), this); // Loads Player Movement part of the plugin
     getServer().getPluginManager().registerEvents(new PlayerInteraction(), this); // Loads Player Interaction part of the plugin
@@ -21,7 +22,6 @@ public final class SpigotTutorial extends JavaPlugin {
     items.scAxe();
   }
 
-  @Override
   public void onDisable() { // What happens on plugin shutdown
     getServer().getConsoleSender().sendMessage(ChatColor.RED + "\n\nSpigot Tutorial plugin has been disabled.\n\n"); // Sends message to console on plugin disable
   }

@@ -2,3 +2,8 @@ name: SpigotTutorial
 version: @version@
 main: io.github.chetwyndkid.spigottutorial.SpigotTutorial
 api-version: 1.13
+
+commands:
+  giveitem:
+  usage: /<command>
+  description: Tutorial Command
