@@ -14,12 +14,12 @@ public class CustomItems implements Listener {
     ItemStack item = new ItemStack(Material.DIAMOND_AXE);
     ItemMeta meta = item.getItemMeta();
 
-    meta.setDisplayName(ChatColor.AQUA + "Its a fucking axe.");
+    meta.setDisplayName(ChatColor.AQUA + "Its a fucking axe."); //Sets item name
     ArrayList<String> lore = new ArrayList<String>();
-    lore.add(ChatColor.WHITE + "I dont know what you expected this to be.");
-    meta.setLore(lore);
-    item.setItemMeta(meta);
+    lore.add(ChatColor.WHITE + "I dont know what you expected this to be."); //Set what you would like the lore meta to be
+    meta.setLore(lore); //Actually set the lore
+    item.setItemMeta(meta); //Actually set the name.
 
-    player.getInventory().addItem(item);
+    player.getInventory().addItem(item); //Gives the item
   }
 }
