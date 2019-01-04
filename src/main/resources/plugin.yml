@@ -7,3 +7,6 @@ commands:
   giveitem:
     usage: /<command>
     description: Tutorial Command
+  inventory:
+    usage: /inventory
+    description: Opens inventory
