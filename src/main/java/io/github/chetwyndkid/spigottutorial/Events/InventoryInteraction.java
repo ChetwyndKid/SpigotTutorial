@@ -1,5 +1,6 @@
 package io.github.chetwyndkid.spigottutorial.Events;
 
+import io.github.chetwyndkid.spigottutorial.CustomInventory;
 import io.github.chetwyndkid.spigottutorial.SpigotTutorial;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -13,11 +14,11 @@ import org.bukkit.plugin.Plugin;
 public class InventoryInteraction implements Listener {
   private Plugin plugin = SpigotTutorial.getPlugin(SpigotTutorial.class);
   public String prefix = (ChatColor.BLUE + "TUTORIAL>> ");
+  private CustomInventory ci = new CustomInventory();
 
   @EventHandler
   public void InvenClick(InventoryClickEvent event){
     Player player = (Player) event.getWhoClicked();
-
     Inventory open = event.getClickedInventory(); //Gets inventory that was clicked
     ItemStack item = event.getCurrentItem(); //Gets item that was clicked
     if(open == null) { //Prevents errors if you click none of the above two options.
@@ -29,10 +30,14 @@ public class InventoryInteraction implements Listener {
         return;
       }
       if(item.getItemMeta().getDisplayName().equals(ChatColor.RED + "HEALTH")) { //If clicked item is Health
+        player.closeInventory();
         player.setHealth(20); //Set health to 20 on click
+        ci.newInventory(player);
       }
         else if(item.getItemMeta().getDisplayName().equals(ChatColor.DARK_PURPLE + "FOOD")) { //If clicked item if Food
+          player.closeInventory();
           player.setFoodLevel(20); //Set food to 20
+          ci.newInventory(player);
       }
     }
   }
